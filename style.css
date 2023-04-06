@@ -1,6 +1,11 @@
 body{
   background-color: #F0ffff;
-  font-size:;
+
+}
+
+.displayV{
+  font-size: 30px;
+  text-align: end;
 }
 
 .container{
