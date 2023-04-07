@@ -1,7 +1,7 @@
 let firstNumber;
 let display = document.querySelector('.display')
 let clear = document.querySelector('#clear')
-let opp = document.querySelectorAll('.operator')
+let operators = document.querySelectorAll('.operator')
 let operator;
 let secondNumber;
 let getElement = document.querySelectorAll('#click')
@@ -48,9 +48,9 @@ getElement.forEach(function (element) {
   
 })
 
-opp.forEach(function (opps) {
-  opps.addEventListener('click', ()=>{
-    operator=opps.textContent
+operators.forEach(function (op) {
+  op.addEventListener('click', ()=>{
+    operator=op.textContent
     console.log(operator);
   })
 
