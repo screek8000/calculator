@@ -5,8 +5,6 @@ let operators = document.querySelectorAll('.operator')
 let operator;
 let secondNumber;
 let getElement = document.querySelectorAll('#click')
-firstNumber = parseInt(getElement.textContent) 
-secondNumber = parseInt(getElement.textContent) 
 
 const sum = ()=>{
   return firstNumber + secondNumber;
@@ -42,11 +40,13 @@ clear.addEventListener('click', function () {
 getElement.forEach(function (element) {
   element.addEventListener('click', function(){
     display.textContent += parseInt(element.textContent)
-    firstNumber = display.textContent
+    firstNumber +=parseInt(element.textContent)
+    console.log(firstNumber);
     
   })
   
 })
+
 
 operators.forEach(function (op) {
   op.addEventListener('click', ()=>{
