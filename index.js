@@ -1,6 +1,7 @@
 let firstNumber;
 let display = document.querySelector('.display')
 display.textContent="";
+
 let clear = document.querySelector('#clear')
 let operators = document.querySelectorAll('.operator')
 let operator;
@@ -53,6 +54,7 @@ clear.addEventListener('click', function () {
   secondNumber=undefined;
   operator=undefined;
   operatorClicked=false
+  !operate()
    display.textContent=""
 })
 
@@ -80,4 +82,5 @@ operators.forEach((ops)=>{
     operator=ops.textContent;
     operatorClicked= true
   })
+  operate()
 })
