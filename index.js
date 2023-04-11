@@ -40,8 +40,7 @@ clear.addEventListener('click', function () {
 getElement.forEach(function (element) {
   element.addEventListener('click', function(){
     display.textContent += parseInt(element.textContent)
-    firstNumber +=parseInt(element.textContent)
-    console.log(firstNumber);
+    firstNumber =display.textContent
     
   })
   
@@ -50,8 +49,12 @@ getElement.forEach(function (element) {
 
 operators.forEach(function (op) {
   op.addEventListener('click', ()=>{
-    operator=op.textContent
-    console.log(operator);
+   display.textContent=secondNumber;
   })
 
+})
+operators.forEach((ops)=>{
+  ops.addEventListener('click',()=>{
+    operator=ops.textContent;
+  })
 })
