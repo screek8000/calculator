@@ -29,31 +29,45 @@ const multiply = ()=>{
   results = Number(firstNumber * secondNumber);
   return firstNumber * secondNumber;
 }
-const operate = () =>{
-
-  if (operator=='+'){
-    sum()
-    
+const operate = () => {
+  if (firstNumber !== undefined && secondNumber !== undefined) {
+    if (operator == '+') {
+      results = sum();
+    } else if (operator == '-') {
+      results = substract();
+    } else if (operator == '/') {
+      results = divide();
+    } else if (operator == '*') {
+      results = multiply();
+    }
+    firstNumber = results;
+    display.textContent = results;
+    operator=undefined
+    secondNumber = undefined;
   }
- else if (operator=='-'){
-    substract()
-  }
- else if (operator=='/'){
-    divide()
-  }
- else if (operator=='*'){
-    multiply()
-  }
-  firstNumber=results;
-  display.textContent=results;
-  
-  
 }
+
+operators.forEach((ops) => {
+  ops.addEventListener('click', () => {
+    if (firstNumber !== undefined) {
+      if (secondNumber !== undefined) {
+        operate();
+        firstNumber=results;
+       
+      }
+      display.textContent = results;
+      operator = ops.textContent;
+      operatorClicked = true;
+    }
+  })
+})
+
 clear.addEventListener('click', function () {
   firstNumber=undefined;
   secondNumber=undefined;
   operator=undefined;
   operatorClicked=false
+  results= undefined;
   !operate()
    display.textContent=""
 })
@@ -61,11 +75,11 @@ clear.addEventListener('click', function () {
 getElement.forEach(function (element) {
   element.addEventListener('click', function(){
     if(!operatorClicked){
-      display.textContent += parseInt(element.textContent)
-      firstNumber = Number(display.textContent)
+      display.textContent += parseFloat(element.textContent)
+      firstNumber = parseFloat(display.textContent)
     }else if(operatorClicked){
-      display.textContent += parseInt(element.textContent)
-      secondNumber =Number(display.textContent)
+      display.textContent += parseFloat(element.textContent)
+      secondNumber =parseFloat(display.textContent)
     } else{
       secondNumber= undefined;
       firstNumber=undefined;
@@ -76,11 +90,3 @@ getElement.forEach(function (element) {
   
 })
 
-operators.forEach((ops)=>{
-  ops.addEventListener('click',()=>{
-    display.textContent="";
-    operator=ops.textContent;
-    operatorClicked= true
-  })
-  operate()
-})
