@@ -43,7 +43,6 @@ const operate = () => {
     firstNumber = results;
     display.textContent = results;
     operator=undefined
-    secondNumber = undefined;
   }
 }
 
@@ -53,7 +52,7 @@ operators.forEach((ops) => {
       if (secondNumber !== undefined) {
         operate();
         firstNumber=results;
-       
+        secondNumber = undefined;
       }
       display.textContent = results;
       operator = ops.textContent;
@@ -75,18 +74,23 @@ clear.addEventListener('click', function () {
 getElement.forEach(function (element) {
   element.addEventListener('click', function(){
     if(!operatorClicked){
-      display.textContent += parseFloat(element.textContent)
-      firstNumber = parseFloat(display.textContent)
-    }else if(operatorClicked){
-      display.textContent += parseFloat(element.textContent)
-      secondNumber =parseFloat(display.textContent)
+      if (display.textContent.includes('.') && element.textContent === '.') {
+        return;
+      }
+      display.textContent += element.textContent;
+      firstNumber = parseFloat(display.textContent);
+    } else if(operatorClicked){
+      if (display.textContent.includes('.') && element.textContent === '.') {
+        return;
+      }
+      display.textContent = element.textContent;
+      secondNumber = parseFloat(display.textContent);
+      operatorClicked = false;
+    } else if(results !== undefined && secondNumber !==undefined){
+      display.textContent = "FUCK YOU"     
     } else{
       secondNumber= undefined;
       firstNumber=undefined;
     }
-   
-    
-  })
-  
+  })  
 })
-
