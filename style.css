@@ -1,0 +1,98 @@
+body{
+  background-color: #F0ffff;
+
+}
+
+.container{
+  text-align: center;
+  width: 370px;
+  height: 420px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border: 10px solid rgb(59, 59, 59);
+}
+
+
+.display{
+  border: 4px solid black;
+  font-size: 30px;
+  text-align: end;
+  justify-items: flex-end;
+  overflow: hidden;
+  flex: 1;
+}
+
+.btn-container{
+  background-color: black;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+.ctn-1{
+  display: flex;
+  margin-right: 4px;
+}
+
+.btn1{
+  font-size: 20px;
+ flex: 1;
+ border-radius: 5px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ background-color: dodgerblue;
+ border: 2px solid black;
+}
+.ctn-2{
+  display: flex;
+  margin-right: 4px;
+}
+.ctn-3{
+  display: flex;
+  margin-right: 4px;
+}
+.ctn-4{
+  display: flex;
+  margin-right: 4px;
+}
+.ctn-5{
+  display: flex;
+  margin-right: 4px;
+}
+
+.btn{
+ font-size: 20px;
+ flex: 1;
+ border-radius: 5px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ background-color: rgb(33, 124, 126);
+ border: 2px solid black;
+}
+.btn0{
+  font-size: 20px;
+ flex: 2.2;
+ border-radius: 5px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ background-color: rgb(33, 124, 126);
+ border: 2px solid black;
+}
+.btn1:last-child{
+  background-color: rgb(255, 143, 31);
+  
+}
+
+.btn1:active{
+  opacity: 0.8;
+}
+.btn:last-child{
+  background-color: rgb(255, 143, 31);
+}
+
+.btn:active{
+  opacity: 0.8;
+}
